@@ -5,7 +5,11 @@ let promise = new Promise((resolve, reject) => {
 });
 
 promise.then((array) => {
-    return array.filter(num => num % 2 === 0);
+    let filteredArray = array.filter(num => num % 2 === 0);
+    document.getElementById('output').innerText = filteredArray.toString();
+    return filteredArray;
 }).then((array) => {
-	return array.map(num => num*2);
+    let doubledArray = array.map(num => num*2);
+    document.getElementById('output').innerText = doubledArray.toString();
+    return doubledArray;
 });
